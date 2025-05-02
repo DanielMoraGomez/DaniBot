@@ -2,213 +2,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DaniBot - Tu Asistente Inteligente</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em;
-        }
-        main {
-            margin-top: 2em;
-        }
-        #chatbox {
-            width: 80%;
-            max-width: 500px;
-            height: 300px;
-            background: white;
-            border: 1px solid #ccc;
-            margin: 1em auto;
-            padding: 1em;
-            overflow-y: auto;
-            text-align: left;
-        }
-        #userInput {
-            width: 70%;
-            padding: 0.5em;
-        }
-        #sendButton {
-            padding: 0.5em 1em;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        footer {
-            margin-top: 2em;
-            font-size: 0.8em;
-            color: #555;
-        }
-        section {
-            padding: 2em;
-            background-color: #ffffff;
-            margin: 2em auto;
-            width: 80%;
-            max-width: 600px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-        h2 {
-            color: #4CAF50;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Bienvenido a DaniBot 🤖</h1>
-    <p>Tu asistente inteligente para aprender sobre chatbots</p>
-</header>
-
-<main>
-    <div id="chatbox">
-        <p><strong>DaniBot:</strong> ¡Hola! ¿En qué puedo ayudarte hoy?</p>
-    </div>
-    <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí...">
-    <button id="sendButton">Enviar</button>
-</main>
-
-<section>
-    <h2>Sobre Nosotros</h2>
-    <p>DaniBot es un proyecto demostrativo para enseñar el funcionamiento de los chatbots. No vendemos productos ni servicios reales. Nuestro objetivo es educativo y experimental.</p>
-</section>
-
-<section>
-    <h2>Política de Privacidad</h2>
-    <p>No recolectamos información personal de los usuarios. Este sitio es solo con fines demostrativos. Si tienes dudas, puedes escribirnos a contacto@danibot.com.</p>
-</section>
-
-<footer>
-    <p>© 2025 DaniBot. Proyecto demostrativo de Chatbots.</p>
-</footer>
-
-<script>
-    const chatbox1 = document.getElementById('chatbox');
-    // Removed duplicate declaration of userInput
-
-    sendButton.addEventListener('click', () => {
-        const userText = userInput.value.trim();
-        if (userText !== '') {
-            chatbox.innerHTML += `<p><strong>Tú:</strong> ${userText}</p>`;
-            userInput.value = '';
-
-            // Respuesta automática sencilla
-            let botResponse = '';
-            if (userText.toLowerCase().includes('hola')) {
-                botResponse = '¡Hola! 👋 ¿Cómo estás?';
-            } else if (userText.toLowerCase().includes('que es un chatbot')) {
-                botResponse = 'Un chatbot es un programa que simula una conversación humana.';
-            } else if (userText.toLowerCase().includes('gracias')) {
-                botResponse = '¡De nada! Estoy aquí para ayudarte 😊';
-            } else {
-                botResponse = '¡Interesante! Cuéntame más.';
-            }
-
-            setTimeout(() => {
-                chatbox.innerHTML += `<p><strong>DaniBot:</strong> ${botResponse}</p>`;
-                chatbox.scrollTop = chatbox.scrollHeight;
-            }, 500);
-        }
-    });
-
-    // Permitir enviar con Enter
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendButton.click();
-        }
-    });
-</script>
-
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>DaniBot - Tu Asistente Inteligente</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DaniBot - Tu Asistente Inteligente</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
 
-    <header class="bg-green-600 text-white py-6 shadow text-center">
-        <h1 class="text-3xl font-bold">Bienvenido a DaniBot 🤖</h1>
-        <p class="text-lg mt-2">Tu asistente inteligente para aprender sobre chatbots</p>
-    </header>
+  <header class="bg-green-600 text-white py-6 shadow text-center">
+    <h1 class="text-3xl font-bold">Bienvenido a DaniBot 🤖</h1>
+    <p class="text-lg mt-2">Tu asistente inteligente para aprender sobre chatbots</p>
+  </header>
 
-    <main class="mt-10 flex flex-col items-center">
-        <div id="chatbox" class="bg-white w-11/12 max-w-md h-80 overflow-y-auto p-4 border border-gray-300 rounded-lg shadow-md">
-            <p><strong>DaniBot:</strong> ¡Hola! ¿En qué puedo ayudarte hoy?</p>
-        </div>
-        <div class="mt-4 w-11/12 max-w-md flex">
-            <input id="userInput" type="text" placeholder="Escribe tu mensaje aquí..."
-                   class="flex-grow border border-gray-300 p-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400">
-            <button id="sendButton"
-                    class="bg-green-600 text-white px-4 py-2 rounded-r-md hover:bg-green-700">Enviar</button>
-        </div>
-    </main>
+  <main class="mt-10 flex flex-col items-center">
+    <div id="chatbox" class="bg-white w-11/12 max-w-md h-80 overflow-y-auto p-4 border border-gray-300 rounded-lg shadow-md">
+      <p><strong>DaniBot:</strong> ¡Hola! ¿En qué puedo ayudarte hoy?</p>
+    </div>
+    <div class="mt-4 w-11/12 max-w-md flex">
+      <input id="userInput" type="text" placeholder="Escribe tu mensaje aquí..."
+             class="flex-grow border border-gray-300 p-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400">
+      <button id="sendButton"
+              class="bg-green-600 text-white px-4 py-2 rounded-r-md hover:bg-green-700">Enviar</button>
+    </div>
+  </main>
 
-    <section class="bg-white p-6 mt-10 mx-auto max-w-2xl rounded-lg shadow">
-        <h2 class="text-2xl text-green-600 font-semibold mb-2">Sobre Nosotros</h2>
-        <p>DaniBot es un proyecto demostrativo para enseñar el funcionamiento de los chatbots. No vendemos productos ni servicios reales. Nuestro objetivo es educativo y experimental.</p>
-    </section>
+  <section class="bg-white p-6 mt-10 mx-auto max-w-2xl rounded-lg shadow">
+    <h2 class="text-2xl text-green-600 font-semibold mb-2">Sobre Nosotros</h2>
+    <p>DaniBot es un proyecto demostrativo para enseñar el funcionamiento de los chatbots.</p>
+  </section>
 
-    <section class="bg-white p-6 mt-6 mx-auto max-w-2xl rounded-lg shadow">
-        <h2 class="text-2xl text-green-600 font-semibold mb-2">Política de Privacidad</h2>
-        <p>No recolectamos información personal de los usuarios. Este sitio es solo con fines demostrativos. Si tienes dudas, puedes escribirnos a <a href="mailto:contacto@danibot.com" class="text-green-600 underline">contacto@danibot.com</a>.</p>
-    </section>
+  <section class="bg-white p-6 mt-6 mx-auto max-w-2xl rounded-lg shadow">
+    <h2 class="text-2xl text-green-600 font-semibold mb-2">Política de Privacidad</h2>
+    <p>No recolectamos información personal. Este sitio es solo con fines educativos.</p>
+  </section>
 
-    <footer class="text-center text-sm text-gray-500 mt-10 mb-4">
-        © 2025 DaniBot. Proyecto demostrativo de Chatbots.
-    </footer>
+  <footer class="text-center text-sm text-gray-500 mt-10 mb-4">
+    © 2025 DaniBot. Proyecto demostrativo de Chatbots.
+  </footer>
 
-    <script>
-        const chatbox = document.getElementById('chatbox');
-        const userInput = document.getElementById('userInput');
-        const sendButton = document.getElementById('sendButton');
+  <script>
+    const chatbox = document.getElementById('chatbox');
+    const userInput = document.getElementById('userInput');
+    const sendButton = document.getElementById('sendButton');
 
-        sendButton.addEventListener('click', () => {
-            const userText = userInput.value.trim();
-            if (userText !== '') {
-                chatbox.innerHTML += `<p><strong>Tú:</strong> ${userText}</p>`;
-                userInput.value = '';
+    sendButton.addEventListener('click', () => {
+      const userText = userInput.value.trim();
+      if (userText !== '') {
+        chatbox.innerHTML += `<p><strong>Tú:</strong> ${userText}</p>`;
+        userInput.value = '';
 
-                let botResponse = '';
-                const msg = userText.toLowerCase();
-                if (msg.includes('hola')) {
-                    botResponse = '¡Hola! 👋 ¿Cómo estás?';
-                } else if (msg.includes('que es un chatbot')) {
-                    botResponse = 'Un chatbot es un programa que simula una conversación humana.';
-                } else if (msg.includes('gracias')) {
-                    botResponse = '¡De nada! Estoy aquí para ayudarte 😊';
-                } else {
-                    botResponse = '¡Interesante! Cuéntame más.';
-                }
+        let botResponse = '';
+        const msg = userText.toLowerCase();
+        if (msg.includes('hola')) {
+          botResponse = '¡Hola! 👋 ¿Cómo estás?';
+        } else if (msg.includes('que es un chatbot')) {
+          botResponse = 'Un chatbot es un programa que simula una conversación humana.';
+        } else if (msg.includes('gracias')) {
+          botResponse = '¡De nada! Estoy aquí para ayudarte 😊';
+        } else {
+          botResponse = '¡Interesante! Cuéntame más.';
+        }
 
-                setTimeout(() => {
-                    chatbox.innerHTML += `<p><strong>DaniBot:</strong> ${botResponse}</p>`;
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                }, 500);
-            }
-        });
+        setTimeout(() => {
+          chatbox.innerHTML += `<p><strong>DaniBot:</strong> ${botResponse}</p>`;
+          chatbox.scrollTop = chatbox.scrollHeight;
+        }, 500);
+      }
+    });
 
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendButton.click();
-            }
-        });
-    </script>
-
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+  </script>
 </body>
-</html>
