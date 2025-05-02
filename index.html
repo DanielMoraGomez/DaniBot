@@ -2,6 +2,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaniBot - Tu Asistente Inteligente</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+        }
+        main {
+            margin-top: 2em;
+        }
+        #chatbox {
+            width: 80%;
+            max-width: 500px;
+            height: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            margin: 1em auto;
+            padding: 1em;
+            overflow-y: auto;
+            text-align: left;
+        }
+        #userInput {
+            width: 70%;
+            padding: 0.5em;
+        }
+        #sendButton {
+            padding: 0.5em 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 2em;
+            font-size: 0.8em;
+            color: #555;
+        }
+        section {
+            padding: 2em;
+            background-color: #ffffff;
+            margin: 2em auto;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenido a DaniBot 🤖</h1>
+    <p>Tu asistente inteligente para aprender sobre chatbots</p>
+</header>
+
+<main>
+    <div id="chatbox">
+        <p><strong>DaniBot:</strong> ¡Hola! ¿En qué puedo ayudarte hoy?</p>
+    </div>
+    <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí...">
+    <button id="sendButton">Enviar</button>
+</main>
+
+<section>
+    <h2>Sobre Nosotros</h2>
+    <p>DaniBot es un proyecto demostrativo para enseñar el funcionamiento de los chatbots. No vendemos productos ni servicios reales. Nuestro objetivo es educativo y experimental.</p>
+</section>
+
+<section>
+    <h2>Política de Privacidad</h2>
+    <p>No recolectamos información personal de los usuarios. Este sitio es solo con fines demostrativos. Si tienes dudas, puedes escribirnos a contacto@danibot.com.</p>
+</section>
+
+<footer>
+    <p>© 2025 DaniBot. Proyecto demostrativo de Chatbots.</p>
+</footer>
+
+<script>
+    const chatbox1 = document.getElementById('chatbox');
+    // Removed duplicate declaration of userInput
+
+    sendButton.addEventListener('click', () => {
+        const userText = userInput.value.trim();
+        if (userText !== '') {
+            chatbox.innerHTML += `<p><strong>Tú:</strong> ${userText}</p>`;
+            userInput.value = '';
+
+            // Respuesta automática sencilla
+            let botResponse = '';
+            if (userText.toLowerCase().includes('hola')) {
+                botResponse = '¡Hola! 👋 ¿Cómo estás?';
+            } else if (userText.toLowerCase().includes('que es un chatbot')) {
+                botResponse = 'Un chatbot es un programa que simula una conversación humana.';
+            } else if (userText.toLowerCase().includes('gracias')) {
+                botResponse = '¡De nada! Estoy aquí para ayudarte 😊';
+            } else {
+                botResponse = '¡Interesante! Cuéntame más.';
+            }
+
+            setTimeout(() => {
+                chatbox.innerHTML += `<p><strong>DaniBot:</strong> ${botResponse}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            }, 500);
+        }
+    });
+
+    // Permitir enviar con Enter
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>DaniBot - Tu Asistente Inteligente</title>
